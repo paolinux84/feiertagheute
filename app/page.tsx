@@ -1,28 +1,28 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import holidaysData from  "../holidays.json"
+import holidaysData from "../holidays.json"
 import Script from "next/script";
 
 export default function Home() {
   //const [selectedRegion, setSelectedRegion] = useState(null);
   const [gdprPreferences, setGdprPreferences] = useState({ analytics: false, ads: false, accepted: false });
 
-interface gdprPreferences{
-  analytics: boolean,
-   ads: boolean, 
-   accepted: boolean
-}
+  interface gdprPreferences {
+    analytics: boolean,
+    ads: boolean,
+    accepted: boolean
+  }
 
 
-const holidays: { [key: string]: string[] } = holidaysData;
+  const holidays: { [key: string]: string[] } = holidaysData;
 
   useEffect(() => {
     const consent = localStorage.getItem("gdprPreferences");
     if (consent) setGdprPreferences(JSON.parse(consent));
   }, []);
 
-  const updateGdpr = (prefs : gdprPreferences) => {
+  const updateGdpr = (prefs: gdprPreferences) => {
     localStorage.setItem("gdprPreferences", JSON.stringify(prefs));
     setGdprPreferences(prefs);
   };
@@ -58,7 +58,7 @@ const holidays: { [key: string]: string[] } = holidaysData;
         <Script
           strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+          data-ad-client="ca-pub-7559595832916083"
           async
         />
       )}

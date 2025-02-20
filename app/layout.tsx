@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <AdSense pId="7559595832916083" />
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
